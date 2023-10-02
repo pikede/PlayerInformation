@@ -51,7 +51,6 @@ class PlayerFragment : Fragment(), PlayerSelected {
     }
 
     private fun setupUI() {
-        binding.loadingProgress.isVisible = true
         binding.players.run {
             layoutManager = LinearLayoutManager(requireContext())
             playerAdapter = PlayerAdapter(this@PlayerFragment)
@@ -60,6 +59,7 @@ class PlayerFragment : Fragment(), PlayerSelected {
     }
 
     private fun updatePlayers(it: List<Player>) {
+        binding.loadingProgress.isVisible = true
         playerAdapter.updatePlayers(it)
         binding.loadingProgress.isVisible = false
     }
