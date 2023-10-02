@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Player Information</string>
+    <string name="enter_player_name">Enter player name</string>
+    <string name="player_name">player name</string>
+    <string name="team_name">team name</string>
+    <string name="player_image">Player Image</string>
+    <string name="club_name">club name</string>
+    <string name="years">years</string>
+</resources>
