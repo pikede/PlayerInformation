@@ -1,6 +1,7 @@
 Player Search App by PIKEDE
 
-Tools: Android, Dependency Injection(Koin), Kotlin, Coroutines, MutableLiveData, LiveData, MVVM Architecture, Retrofit, Junit
+Tools:
+Android, Dependency Injection(Koin), Kotlin, Coroutines, MutableLiveData, LiveData, MVVM Architecture, Retrofit, Junit
 
 Features:
 - User can search a player/athlete name
@@ -9,7 +10,6 @@ Features:
 - Unit test to for handling loading players error (PlayerViewModelTest)
 
 Improvements:
-- more testing for network calls and PlayerHistory
-- Recycler view could have more styling
+- testing network calls and PlayerHistoryViewmodel
+- cache for offline data persistence and repository pattern
 - user tracking and analytics
-- repository pattern with cache for offline data persistence
