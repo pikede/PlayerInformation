@@ -11,7 +11,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import retrofit2.Response
 
-class PlayerHistoryViewModel(private val playerService : PlayerService) : ViewModel() {
+class PlayerHistoryViewModel(private val playerService: PlayerService) : ViewModel() {
     val errorMessage = MutableLiveData<String>()
     val formerTeams: LiveData<List<FormerTeam>> get() = _formerTeams
     private val _formerTeams = MutableLiveData<List<FormerTeam>>()
@@ -40,7 +40,7 @@ class PlayerHistoryViewModel(private val playerService : PlayerService) : ViewMo
 
     private fun previousTeamSuccess(formerTeam: Response<FormerTeams>) {
         formerTeam.body()?.let {
-            it.formerteams?.let {teams ->
+            it.formerteams?.let { teams ->
                 _formerTeams.postValue(teams)
             }
         }
