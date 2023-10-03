@@ -28,5 +28,5 @@ data class Player(
     val wage: String,
     @SerializedName("strThumb")
     @Expose
-    val thumbNail: String?
+    val thumbNail: String?,
 )

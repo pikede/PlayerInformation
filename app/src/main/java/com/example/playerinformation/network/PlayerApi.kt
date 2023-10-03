@@ -8,8 +8,8 @@ import retrofit2.http.Query
 
 interface PlayerApi {
     @GET("searchplayers.php")
-    suspend fun getPlayer(@Query("p") playerName: String) : Response<Players>
+    suspend fun getPlayer(@Query("p") playerName: String): Response<Players>
 
     @GET("lookupformerteams.php")
-    suspend fun getPlayerPreviousTeams(@Query("id") playerId: String) : Response<FormerTeams>
+    suspend fun getPlayerPreviousTeams(@Query("id") playerId: String): Response<FormerTeams>
 }
