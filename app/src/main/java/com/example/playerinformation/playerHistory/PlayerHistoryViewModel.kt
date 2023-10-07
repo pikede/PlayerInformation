@@ -16,11 +16,19 @@ class PlayerHistoryViewModel(private val playerService: PlayerService) : ViewMod
     val formerTeams: LiveData<List<FormerTeam>> get() = _formerTeams
     private val _formerTeams = MutableLiveData<List<FormerTeam>>()
     private val api by lazy { playerService.getPlayerApi() }
-
+    private lateinit var searchPlayerId: String
     fun getPlayerFormerTeams(playerId: String) {
+        if (this::searchPlayerId.isInitialized && searchPlayerId == playerId) {
+            return
+        }
+        searchPlayerId = playerId
+        searchPlayerFormerTeams()
+    }
+
+    private fun searchPlayerFormerTeams() {
         viewModelScope.launch(Dispatchers.IO) {
             try {
-                val previousTeamResponse = api.getPlayerPreviousTeams(playerId)
+                val previousTeamResponse = api.getPlayerPreviousTeams(searchPlayerId)
                 handleResponse(previousTeamResponse)
             } catch (e: Exception) {
                 previousTeamError(e.message ?: e.toString())
