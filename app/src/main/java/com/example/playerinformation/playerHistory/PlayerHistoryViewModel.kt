@@ -16,7 +16,7 @@ class PlayerHistoryViewModel(private val playerService: PlayerService) : ViewMod
     val formerTeams: LiveData<List<FormerTeam>> get() = _formerTeams
     private val _formerTeams = MutableLiveData<List<FormerTeam>>()
     private val api by lazy { playerService.getPlayerApi() }
-    lateinit var searchPlayerId: String
+    private lateinit var searchPlayerId: String
     fun getPlayerFormerTeams(playerId: String) {
         if (this::searchPlayerId.isInitialized && searchPlayerId == playerId) {
             return
