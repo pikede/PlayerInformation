@@ -10,6 +10,7 @@ import com.example.playerinformation.playerInformation.PlayerFragment
 
 class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
     private lateinit var binding: ActivityMainBinding
+    var previousSearchedPlayerName = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,7 +25,13 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
     }
 
     override fun onQueryTextSubmit(playerName: String?): Boolean {
-        playerName?.let { replacePlayerFragment(it) }
+        playerName?.let {
+            if (previousSearchedPlayerName == it) {
+                return@let
+            }
+            previousSearchedPlayerName = it
+            replacePlayerFragment(previousSearchedPlayerName)
+        }
         return false
     }
 
