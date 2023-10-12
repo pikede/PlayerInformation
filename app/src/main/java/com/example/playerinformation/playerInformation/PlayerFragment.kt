@@ -73,7 +73,7 @@ class PlayerFragment : Fragment(), PlayerSelected {
     }
 
     override fun getPlayerPreviousTeams(player: Player) {
-        showPlayerHistoryFragment(player.playerId)
+        player.playerId?.let { showPlayerHistoryFragment(it) }
     }
 
     private fun showPlayerHistoryFragment(playerId: String) {

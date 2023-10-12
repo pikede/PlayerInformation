@@ -8,6 +8,7 @@
         android:id="@+id/team_badge"
         android:layout_width="80dp"
         android:layout_height="120dp"
+        android:scaleType="fitXY"
         android:src="@drawable/ic_launcher_background"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

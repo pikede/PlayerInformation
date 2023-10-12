@@ -7,26 +7,26 @@ data class Players(@SerializedName("player") val players: List<Player>?)
 data class Player(
     @SerializedName("idPlayer")
     @Expose
-    val playerId: String,
+    val playerId: String?,
     @SerializedName("idTeam")
     @Expose
-    val teamName: String,
+    val teamName: String?,
     @SerializedName("strPlayer")
     @Expose
-    val playerName: String,
+    val playerName: String?,
     @SerializedName("strSport")
     @Expose
-    val sport: String,
+    val sport: String?,
     @SerializedName("dateBorn")
     @Expose
-    val dateBorn: String,
+    val dateBorn: String?,
     @SerializedName("strNumber")
     @Expose
-    val playerNumber: String,
+    val playerNumber: String?,
     @SerializedName("strWage")
     @Expose
-    val wage: String,
+    val wage: String?,
     @SerializedName("strThumb")
     @Expose
-    val thumbNail: String?,
+    val thumbNail: String?
 )
