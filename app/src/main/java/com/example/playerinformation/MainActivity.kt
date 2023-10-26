@@ -10,7 +10,7 @@ import com.example.playerinformation.playerInformation.PlayerFragment
 
 class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
     private lateinit var binding: ActivityMainBinding
-    var previousSearchedPlayerName = ""
+    private var previousSearchedPlayerName = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
